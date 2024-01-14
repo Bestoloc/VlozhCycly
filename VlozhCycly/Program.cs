@@ -12,23 +12,23 @@ namespace VlozhCycly
     {
         static void Main(string[] args)
         {
-            double O = 0;
+            double O = 1;
             double n = double.Parse(Console.ReadLine());
             double k = double.Parse(Console.ReadLine());
             
             
             for (int i = 1; i <= n; i++)
             {
-                double P = 1;
+                double P = 0;
 
                 for (int x = 1; x <= k; x++)
                 {
-                    P = P * Cos(2 * Pow(x, 2) + i);
+                    P += Cos(2 * x * x + i);
                 }
 
-                O += P;
+                O *= P;
             }
-            Console.WriteLine(O);
+            Console.WriteLine($"{O:f5}");
 
 
 
